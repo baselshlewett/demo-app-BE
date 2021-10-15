@@ -14,8 +14,8 @@ class SendLogController extends Controller
     public function get(Request $request, SendLog $sendLog)
     {
         $validator = Validator::make(request()->all(), [
-            'date_from' => 'required|date',
-            'date_to' => 'required|date',
+            'date_from' => 'required|date|before_or_equal:date_to',
+            'date_to' => 'required|date|after_or_equal:date_from',
             'country_id' => 'integer',
             'user_id' => 'integer'
         ]);
