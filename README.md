@@ -1,9 +1,23 @@
 # Infomation
-This project serves as a demo.
+This project serves as a demo, built with Laravel.
 
-## Structure
-This project has 
-## Related files and folders
+## Structure, Related files and folders
+The most relevant files for this project and the requirements are located at:
+
+<ul>
+    <li>
+        Controller: app/Http/Controllers/Api/SendLogController.php
+    </li>
+    <li>
+        Model: app/Models/Api/SendLog.php
+    </li>
+    <li>
+        Database Migrations: database/migrations
+    </li>
+    <li>
+        Database Seeders: database/seeders
+    </li>
+</ul>
 
 ## Installation
 
@@ -29,7 +43,8 @@ This project has
         </pre>
     </li>
     <li>
-        run the following command to create project tables in mysql and seed with dummy data<code>php artisan demo:install</code>
+        run the following command to create project tables in mysql and seed with dummy data
+        <code>php artisan demo:install</code>
     </li>
 </ol>
 
