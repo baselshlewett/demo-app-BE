@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\SendLogController;
+use App\Http\Controllers\Api\UsersController;
+use App\Http\Controllers\Api\CountriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function() {
     Route::get('/messages-log', [SendLogController::class, 'get']);
+    Route::get('/users', [UsersController::class, 'get']);
+    Route::get('/countries', [CountriesController::class, 'get']);
 });

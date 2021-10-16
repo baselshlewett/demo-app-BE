@@ -32,7 +32,7 @@ class SendLog extends Model
             $query->where('usr_id', $userId);
         }
 
-        $query->groupBy('log_success')->groupBy(DB::raw('log_created'))->orderBy('log_created');
+        $query->groupBy(DB::raw('log_created'))->groupBy('log_success')->orderBy('log_created');
 
         return $this->_mapLogsData($query->get());
     }
@@ -59,6 +59,13 @@ class SendLog extends Model
             }
         }
 
-        return $mapped;
+        // push dates inside the object
+        $mapped = collect($mapped)->map(function($log, $key) {
+            $log['date'] = $key;
+            return $log;
+        })->toArray();
+
+        // remove outer keys || make array flat
+        return array_values($mapped);
     }
 }

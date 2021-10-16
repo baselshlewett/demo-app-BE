@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Arr;
+
 class SendLogController extends Controller
 {
     // we use dependency injection to initialize SendLog model class
@@ -22,7 +24,7 @@ class SendLogController extends Controller
 
         // return array of errors to client with status code 400
         if ($validator->fails())
-            return response($validator->errors()->toArray(), 400);
+            return response()->json(Arr::flatten($validator->errors()->toArray()), 400);
 
         // we set default dates to return data at first open or in case date range filter hasn't been sent from FE
         $dateFrom = Carbon::now()->subDays(7);

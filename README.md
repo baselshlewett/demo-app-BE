@@ -51,3 +51,7 @@ The most relevant files for this project and the requirements are located at:
 ## Running the project
 
 After installion you can run <code>php artisan serve</code> and then you can open the page at http://localhost:8000/api/v1/messages-log?date_from=2021-07-07&date_to=2021-10-15 to make sure it is running correctly
+
+## Running the frontend
+
+The frontend is built using Angular and can be found here: https://github.com/ba1948/demo-app-FE
